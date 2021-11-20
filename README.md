@@ -1,6 +1,6 @@
 # POS Sequence Finder
 
-POS Sequence Finder is a Windows desktop app that allows users to find phrases in the Brown corpus that match given part of speech sequences.
+POS Sequence Finder is a Windows desktop app that lets you find phrases in the Brown corpus that match given part of speech sequences.
 
 ## How to install
 
