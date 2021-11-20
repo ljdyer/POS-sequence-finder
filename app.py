@@ -10,8 +10,8 @@ from backend import *
 # === UI SETTINGS ===
 
 # Prompt to display on startup
-INPUT_PROMPT = "Enter a sequence of two or more POS tags from the Brown \
-universal tagset, separated by spaces (e.g. 'ADJ NOUN NOUN')"
+INPUT_PROMPT = "Enter a sequence of two or more POS tags from the" \
+"Brown universal tagset, separated by spaces (e.g. 'ADJ NOUN NOUN')"
 
 # POS tag table strings
 POS_TABLE_HEADINGS = ["Tag", "Description"]
@@ -32,22 +32,25 @@ POS_TABLE_COL_WIDTHS = [7,18]
 # Each sublist in column list is a row in the window
 
 main_column = [
-    [sg.In(key="-SEQUENCE-", size=(MAIN_COL_WIDTH, 1), enable_events=True)],
+    [sg.In(key="-SEQUENCE-", size=(MAIN_COL_WIDTH, 1),
+           enable_events=True)],
     [
         sg.Button(key="-FIND-", button_text=FIND_TEXT, disabled=True),
         sg.Button(key="-RESET-", button_text=RESET_TEXT,
                   button_color='red', disabled=True)],
     [sg.Text(key="-INFO-", text=INPUT_PROMPT,
              size=(MAIN_COL_WIDTH, 2), justification='center')],
-    [sg.Multiline(key="-PHRASES-", size=(MAIN_COL_WIDTH, PHRASE_DISPLAY_ROWS))],
+    [sg.Multiline(key="-PHRASES-",
+                  size=(MAIN_COL_WIDTH, PHRASE_DISPLAY_ROWS))],
     [sg.Button(key="-SAVE-", button_text=SAVE_TEXT, 
-                button_color="green", disabled=True)]
+               button_color="green", disabled=True)]
 ]
 
 pos_column = [
     [sg.Table(
-        key="-TAG_TABLE-",values=ALL_POS, headings=POS_TABLE_HEADINGS,
-        num_rows=len(ALL_POS), hide_vertical_scroll=True, justification='left',
+        key="-TAG_TABLE-",values=ALL_POS,
+        headings=POS_TABLE_HEADINGS, num_rows=len(ALL_POS),
+        hide_vertical_scroll=True, justification='left',
         auto_size_columns=False, col_widths=POS_TABLE_COL_WIDTHS,          
             # Because default cuts off some tags
         enable_events=True,                       
@@ -80,6 +83,8 @@ saveButton = window['-SAVE-']
 
 # Global variable to track sequence currently being displayed
 currently_displayed = None
+# Global variable to track number of matches currently displayed
+current_matches = 0
 
 # Listen for Enter key press in sequenceInput
 sequenceInput.bind("<Return>", "_Enter")
@@ -145,7 +150,8 @@ while True:
         disableReset()
         if pos:
             # Display loading message
-            setInfo(f"Getting phrases for POS sequence {' '.join(pos)}...")
+            setInfo(f"Getting phrases for POS sequence " + \
+                    f"{' '.join(pos)}...")
             # Get matches
             matches = get_matches(pos)
             # Display info and write matches to text box
@@ -157,6 +163,7 @@ while True:
             if matches:
                 enableSave()
             currently_displayed = pos
+            current_matches = len(matches)
             
     # Handle input box value change
     elif event == "-SEQUENCE-":
@@ -177,15 +184,19 @@ while True:
         disableSave()
         # Reset currently_displayed
         currently_displayed = None
+        current_matches = 0
 
     # Handle save button click
     elif event == "-SAVE-":
+        file_name_default = ' '.join(currently_displayed) + \
+                            f" ({current_matches} phrases)"
         # Prompt user for save location
         file_path = sg.popup_get_file(message="", 
                                       save_as=True,
-                                      default_path=' '.join(currently_displayed),
+                                      default_path=file_name_default,
                                       default_extension=".txt",
-                                      file_types=[('Text files', '*.txt')],
+                                      file_types=[
+                                          ('Text files', '*.txt')],
                                       no_window=True)
         if file_path == '':
             # User pressed Cancel
@@ -197,7 +208,8 @@ while True:
                 with open(file_path, 'w') as f:
                     f.write(values['-PHRASES-'])
             except:
-                sg.Popup(f'Unable to save file! (Unknown error.)', keep_on_top=True)
+                sg.Popup(f'Unable to save file! (Unknown error.)',
+                         keep_on_top=True)
             else:
                 sg.Popup('File saved.', keep_on_top=True)
 
@@ -206,7 +218,8 @@ while True:
         # Add the POS tag from the clicked row to the sequence input
         clicked_row = next(iter(values['-TAG_TABLE-']), None)
         if clicked_row is not None:
-            input_ = input_.strip() + ' ' + ALL_POS[clicked_row][0]
+            input_ = (input_.strip() + ' ' + \
+                      ALL_POS[clicked_row][0]).strip()
         sequenceInput.update(input_)
         enableFindIfValidSequence()
 
