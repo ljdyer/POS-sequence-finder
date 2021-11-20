@@ -21,3 +21,10 @@ POS Sequence Finder is a Windows desktop app that lets you find phrases in the B
 
 (coming soon)
 
+## About the code
+
+The code is split into two Python files.
+
+**[app.py](app.py)** is the program for the main app, which is built using the **[PySimpleGUI](https://pysimplegui.readthedocs.io/en/latest/)** library.
+**[backend.py](backend.py)** contains backend functions for parsing user input, getting matches from the Brown corpus using the **[NLTK](https://www.nltk.org/)** library, and generating display strings.
+
