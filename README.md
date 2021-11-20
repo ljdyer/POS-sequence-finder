@@ -6,7 +6,7 @@ POS Sequence Finder is a Windows desktop app that allows users to find phrases i
 
 ### Method 1
 
-1. Download the ZIP archive [POS sequence finder.zip](POS sequence finder.zip).
+1. Download the ZIP archive [POS sequence finder.zip](POS%20sequence&20finder.zip).
 2. Extract all files to any folder on your computer.
 3. Navigate to the folder and double click on the file **POS sequence finder.exe**.
 
