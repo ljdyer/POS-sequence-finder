@@ -26,8 +26,6 @@ POS_LOOKUP = {
     'SYM' : 'symbol'
 }
 
-ALL_POS = [[tag, desc] for tag, desc in POS_LOOKUP.items()]
-
     
 # ====================
 def pos_list(input_: str) -> str:
@@ -81,25 +79,3 @@ def get_match_info_string(pos: list, matches: list) -> str:
     
     return f"Showing {len(matches):,} phrase(s) from the Brown " + \
            f"corpus that match the POS sequence {' '.join(pos)}:"
-
-
-# # ====================
-# def write_matches_to_file():
-#     pass  
-#     # # Write results to a .txt file (if there is at least one match)
-#     # if matches: write_matches_to_txt_file(matches, ' '.join(pos)) print()
-
-
-# # ====================
-# def write_matches_to_txt_file(lines: list, filename: str):
-#     """Write the list of matches to a text file '[file_name].txt'.
-
-#     If a file with that name already exists, overwrite it.
-
-#     Inform the user whether the write was successful or not"""
-    
-#     # Get full filename with '.txt' extension
-#     full_filename = filename + ".txt"
-    
-
-

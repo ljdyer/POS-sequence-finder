@@ -10,10 +10,12 @@ POS Sequence Finder is a Windows desktop app that allows users to find phrases i
 2. Extract all files to any folder on your computer.
 3. Navigate to the folder and double click on <b>POS sequence finder.exe</b>
 
+<img src="icon-screenshot.PNG" caption="Look for the magnifying glass icon!"/>
+
 ### Method 2
 
 1. Clone the repository.
-2. Run the file <b>POS sequence finder.exe</b> in the <b>dist</b> folder.
+2. Run the file <b>[POS sequence finder.exe](dist/POS sequence finder.zip)</b> in the <b>dist</b> folder.
 
 ## How to use
 
