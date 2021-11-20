@@ -19,7 +19,9 @@ POS Sequence Finder is a Windows desktop app that lets you find phrases in the B
 
 ## How to use
 
-(coming soon)
+The UI is very simple and intuitive, so click around and work it out for yourself or watch the demo video on YouTube:
+
+[![Demo video](youtube-screenshot.PNG)](https://www.youtube.com/watch?v=Jhj6PEFC33E)
 
 ## About the code
 
