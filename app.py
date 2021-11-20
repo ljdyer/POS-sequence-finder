@@ -10,7 +10,7 @@ from backend import *
 # === UI SETTINGS ===
 
 # Prompt to display on startup
-INPUT_PROMPT = "Enter a sequence of two or more POS tags from the" \
+INPUT_PROMPT = "Enter a sequence of two or more POS tags from the " \
 "Brown universal tagset, separated by spaces (e.g. 'ADJ NOUN NOUN')"
 
 # POS tag table strings
