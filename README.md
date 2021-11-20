@@ -15,7 +15,7 @@ POS Sequence Finder is a Windows desktop app that allows users to find phrases i
 ### Method 2
 
 1. Clone the repository.
-2. Run the file **[POS-sequence-finder.exe](dist/POS-sequence-finder.exe)** in the **dist** folder.
+2. Run the file **POS-sequence-finder.exe** in the **dist** folder.
 
 ## How to use
 
