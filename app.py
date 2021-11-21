@@ -73,7 +73,7 @@ layout = [
 
 window = sg.Window("POS sequence finder", layout, finalize='True')
 
-# snake_case variable names for UI elements
+# camelCase variable names for UI elements
 findButton = window['-FIND-']
 sequenceInput = window['-SEQUENCE-']
 infoText = window['-INFO-']
@@ -92,7 +92,7 @@ sequenceInput.bind("<Return>", "_Enter")
 
 # === WINDOW CONTROL FUNCTIONS ===
 
-# snake_case function names
+# camelCase function names
 
 # Enable/disable buttons
 def disableFind():
