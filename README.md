@@ -10,7 +10,7 @@ POS Sequence Finder is a Windows desktop app that lets you find phrases in the B
 2. Extract all files to any folder on your computer.
 3. Navigate to the folder and double click on the file **POS-sequence-finder.exe**.
 
-<img src="icon-screenshot.PNG" title="Look for the magnifying glass icon!"/>
+<img src="readme-img/icon-screenshot.PNG" title="Look for the magnifying glass icon!"/>
 
 ### Method 2
 
@@ -21,7 +21,7 @@ POS Sequence Finder is a Windows desktop app that lets you find phrases in the B
 
 The UI is very simple and intuitive, so click around and work it out for yourself or watch the demo video on YouTube:
 
-[![Demo video](youtube-screenshot.PNG)](https://www.youtube.com/watch?v=Jhj6PEFC33E)
+[![Demo video](readme-img/youtube-screenshot.PNG)](https://www.youtube.com/watch?v=Jhj6PEFC33E)
 
 ## About the code
 
